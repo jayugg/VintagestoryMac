@@ -19,3 +19,8 @@ Will be taken down at request of the Vintage Story team.
    vintagestorymodinstall://modid
    ```
 8. Enjoy 1-click mod installation from your browser or terminal!
+
+## License
+
+The code in this repo is licensed under the MIT License.  
+Vintage Story itself, and any other third‑party native libraries, remain under their original licenses.
