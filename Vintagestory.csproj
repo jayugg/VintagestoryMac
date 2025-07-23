@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SmushSharp" Version="1.0.0" />
+    <PackageReference Include="SmushSharp" Version="1.0.1" />
   </ItemGroup>
 
   <!-- Include the full Vintage Story installation -->
@@ -50,18 +50,10 @@
 
 
     <!-- copy into $(OutDir)\Lib\<subfolders> -->
-    <Copy SourceFiles="@(ExternalLibs)"
-          DestinationFiles="@(ExternalLibs->'$(OutDir)Lib\%(RecursiveDir)%(Filename)%(Extension)')"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(ExternalLibs)"
-          DestinationFiles="@(ExternalLibs->'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(ExternalAssets)"
-          DestinationFiles="@(ExternalAssets->'$(OutDir)assets\%(RecursiveDir)%(Filename)%(Extension)')"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(Mods)"
-          DestinationFiles="@(Mods->'$(OutDir)Mods\%(RecursiveDir)%(Filename)%(Extension)')"
-          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ExternalLibs)" DestinationFiles="@(ExternalLibs->'$(OutDir)Lib\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ExternalLibs)" DestinationFiles="@(ExternalLibs->'$(OutDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ExternalAssets)" DestinationFiles="@(ExternalAssets->'$(OutDir)assets\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(Mods)" DestinationFiles="@(Mods->'$(OutDir)Mods\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
   </Target>
   
   <Target Name="SetupBundle" AfterTargets="AfterBuild" Condition="'$(Configuration)'=='Release'">

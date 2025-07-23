@@ -33,7 +33,7 @@ public class ClientMac
             return;
         }
         Console.WriteLine("Waiting for a URL…");
-        var launchUrl = UrlEventDetector.DetectLaunchUrl(0.5);
+        var launchUrl = SmushSharp.SmushSharp.DetectLaunchUrl(0.5);
         if (!string.IsNullOrEmpty(launchUrl))
             Console.WriteLine("URL received: " + launchUrl);
         else
